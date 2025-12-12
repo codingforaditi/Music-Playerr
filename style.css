@@ -1,0 +1,155 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  padding: 20px;
+}
+
+/* Player Card */
+.player {
+  width: 90%;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease;
+  position: relative;
+}
+
+/* Album Cover */
+.cover {
+  width: 70%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(100,100,255,0.4);
+  animation: rotate 8s linear infinite paused;
+}
+
+/* Song Title */
+#title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #946c80; /* bright white */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  transition: all 0.3s ease;
+}
+
+/* Optional gradient title (works in Chrome/Safari, no VS Code yellow warning) */
+#title.gradient {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* needed for Chrome/Safari */
+  text-shadow: none;
+}
+
+/* Controls */
+.controls {
+  margin: 15px 0;
+}
+
+.btn {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  border: none;
+  padding: 12px 20px;
+  margin: 8px;
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(100,100,255,0.5);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(100,100,255,0.8);
+}
+
+.play-btn {
+  font-size: 26px;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #5a4fcf, #2b3070);
+}
+
+/* Progress Bar */
+#progress {
+  width: 100%;
+  margin-top: 20px;
+  height: 6px;
+  border-radius: 5px;
+  appearance: none;
+  background: rgba(255,255,255,0.2);
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a5acd, #4169e1);
+  box-shadow: 0 0 15px rgba(100,100,255,0.8);
+}
+
+/* Footer */
+.footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer a {
+  color: #c8c8ff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .player {
+    padding: 25px;
+  }
+  .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+  }
+  .play-btn {
+    font-size: 22px;
+    padding: 10px 20px;
+  }
+  #title {
+    font-size: 20px;
+  }
+}
